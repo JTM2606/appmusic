@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Listado Canciones</title>
+    </head>
+    <body>
+	 <div class="form-group">
+		<label for="canciones">Canciones:</label>
+		<select name="canciones">
+			<?php foreach($canciones as $cancion) : ?>
+				<option> <?php echo $cancion?> </option>
+			<?php endforeach; ?>
+		</select>
+	</div>
+    </body>
+</html>
