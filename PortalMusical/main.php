@@ -7,26 +7,24 @@ session_start();
 </head>
 <body>
 <?php
-require_once("db/conexion.php");
+require("db/conexion.php");
 var_dump($_POST);
 if(isset($_POST['username']) && isset($_POST['password'])){
 	
-	require_once("comprobarUsuario.php");
+	require("comprobarUsuario.php");
 	
 	if (comprobarUsuario($conn)) {
 		
 		$_SESSION['usuario'] = $_POST['username'];
 		
-		require_once("mostrarMenu.php");
-		
+		require("mostrarMenu.php");
 		
 	}	
 	}else{
 	
-		if(isset($_SESSION['username'])){
-		echo "Has iniciado Sesion: ".$_SESSION['username'];
+		if(isset($_SESSION['usuario'])){
 		
-		require_once("mostrarMenu.php");
+		require("mostrarMenu.php");
 		
 		}else{
 			echo "Acceso Restringido debes hacer Login con tu usuario";
