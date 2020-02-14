@@ -3,7 +3,7 @@
 	try {
 	
 		$customerID=$_SESSION['customer_id'];
-		if (isset($_POST['customerID'])) {
+		if (!isset($_POST['fecha_i']) || !isset($_POST['fecha_d'])) {
 				
 			$stmt = $conn->prepare("SELECT INVOICE.INVOICEID,INVOICE.INVOICEDATE,INVOICE.TOTAL
 								FROM INVOICE WHERE INVOICE.CUSTOMERID='$customerID'");

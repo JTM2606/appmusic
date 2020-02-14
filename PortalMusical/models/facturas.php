@@ -14,7 +14,6 @@ require("../db/conexion.php");
 /* Se muestra el formulario la primera vez */
 require("../models/obtenerIDS.php");
 $customerids=obtenerIDS($conn);
-
 if (!isset($_POST) || empty($_POST)) { 
 
 	
@@ -58,7 +57,7 @@ if (!isset($_POST) || empty($_POST)) {
 		if ($_POST!=null) {
 			require("../models/listarCompras.php");
 		} else {
-		
+			throw new PDOException('Fecha Vacía');
 		}
     }
 	catch(PDOException $e)

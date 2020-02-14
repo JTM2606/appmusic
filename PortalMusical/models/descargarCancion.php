@@ -29,6 +29,9 @@
 					
 					if ($_SESSION['carrito'][$i]['trackId']==$array_productos['trackId']) {
 						
+						intval($_SESSION['carrito'][$i]['unitPrice']);
+						$_SESSION['carrito'][$i]['unitPrice']+=$unitPrice;
+						
 						throw new PDOException('Ya has descargado esta canción');
 						
 						$repetido=true;
