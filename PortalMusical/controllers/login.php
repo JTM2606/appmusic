@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-if(isset($_SESSION['usuario'])){
+if(isset($_SESSION['customer_id'])){
 echo "<p>Usuario: " . $_SESSION['usuario'] . "";
 
 echo "<p><a href='../models/downmusic.php'>Compra de Productos</a></p>";
